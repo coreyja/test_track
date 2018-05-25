@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 if ENV['BUNDLE_GEMFILE']&.end_with?('Gemfile.next')
   gem 'rails', '~> 5.1.0'
+  gem 'airbrake', '~> 7.3.0'
 else
   gem 'rails', '~> 5.0.0'
+  gem 'airbrake', '~> 4.3'
 end
 
 # Use postgresql as the database for Active Record
@@ -33,8 +35,6 @@ gem 'puma', '~> 2.14'
 gem 'responders'
 
 gem 'rack-timeout'
-
-gem 'airbrake', '~> 4.3.2'
 
 gem 'newrelic_rpm'
 

@@ -403,7 +403,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake (~> 4.3.2)
+  airbrake (~> 4.3)
   attribute_normalizer (~> 1.2.0)
   aws-sdk (~> 2.3.0)
   byebug
