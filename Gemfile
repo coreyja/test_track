@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+if ENV['BUNDLE_GEMFILE']&.end_with?('Gemfile.next')
+  gem 'rails', '~> 5.1.0'
+else
+  gem 'rails', '~> 5.0.0'
+end
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -9,7 +14,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -22,8 +27,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'puma', '~> 2.14'
 gem 'nokogiri'
+gem 'puma', '~> 2.14'
 
 gem 'responders'
 
@@ -40,22 +45,22 @@ gem 'omniauth-saml'
 
 gem 'simple_form'
 
-gem 'paperclip', '~> 5.2'
 gem 'aws-sdk', '~> 2.3.0'
+gem 'paperclip', '~> 5.2'
 
 gem 'attribute_normalizer', '~> 1.2.0'
 gem 'style_closet', path: 'vendor/gems/style-closet'
 
-gem 'foreman'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
+gem 'foreman'
 
 gem 'with_transactional_lock'
 
 group :development, :test do
-  gem 'simplecov', require: false
   gem 'pry-rails'
   gem 'pry-remote'
+  gem 'simplecov', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
@@ -63,10 +68,10 @@ group :development, :test do
 
   gem 'dotenv-rails'
 
-  gem 'poltergeist'
-  gem 'site_prism'
-  gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'site_prism'
 
   gem 'factory_bot_rails'
 
@@ -75,12 +80,12 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
   gem 'travis', '~> 1.8.0'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
+  gem 'db-query-matchers'
   gem 'shoulda-matchers'
   gem 'timecop'
-  gem 'db-query-matchers'
 end
